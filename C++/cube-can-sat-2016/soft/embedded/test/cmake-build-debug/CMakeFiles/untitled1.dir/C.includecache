@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/argo/cube-can-sat-2016/soft/embedded/test/main.c
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+

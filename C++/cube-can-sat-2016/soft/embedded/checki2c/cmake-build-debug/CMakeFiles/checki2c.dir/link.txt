@@ -1,0 +1,1 @@
+/home/argo/.platformio/packages/toolchain-atmelavr/bin/avr-g++   -g   CMakeFiles/checki2c.dir/src/main.cpp.o CMakeFiles/checki2c.dir/lib/test.cpp.o  -o checki2c -rdynamic 

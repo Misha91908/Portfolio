@@ -1,0 +1,11 @@
+/home/argo/cube-can-sat-2016/soft/embedded/checki2c/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/argo/cube-can-sat-2016/soft/embedded/checki2c/cmake-build-debug/CMakeFiles/PLATFORMIO_BUILD.dir
+/home/argo/cube-can-sat-2016/soft/embedded/checki2c/cmake-build-debug/CMakeFiles/PLATFORMIO_UPLOAD.dir
+/home/argo/cube-can-sat-2016/soft/embedded/checki2c/cmake-build-debug/CMakeFiles/checki2c.dir
+/home/argo/cube-can-sat-2016/soft/embedded/checki2c/cmake-build-debug/CMakeFiles/PLATFORMIO_CLEAN.dir
+/home/argo/cube-can-sat-2016/soft/embedded/checki2c/cmake-build-debug/CMakeFiles/PLATFORMIO_PROGRAM.dir
+/home/argo/cube-can-sat-2016/soft/embedded/checki2c/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/argo/cube-can-sat-2016/soft/embedded/checki2c/cmake-build-debug/CMakeFiles/PLATFORMIO_TEST.dir
+/home/argo/cube-can-sat-2016/soft/embedded/checki2c/cmake-build-debug/CMakeFiles/PLATFORMIO_UPLOADFS.dir
+/home/argo/cube-can-sat-2016/soft/embedded/checki2c/cmake-build-debug/CMakeFiles/PLATFORMIO_REBUILD_PROJECT_INDEX.dir
+/home/argo/cube-can-sat-2016/soft/embedded/checki2c/cmake-build-debug/CMakeFiles/PLATFORMIO_UPDATE_ALL.dir
