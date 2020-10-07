@@ -1,0 +1,45 @@
+{
+    "name": "MS5611", 
+    "repository": {
+        "url": "https://github.com/RobTillaart/Arduino.git", 
+        "type": "git"
+    }, 
+    "platforms": [
+        "atmelavr", 
+        "atmelsam", 
+        "espressif8266", 
+        "intel_arc32", 
+        "microchippic32", 
+        "nordicnrf51", 
+        "teensy", 
+        "timsp430"
+    ], 
+    "frameworks": [
+        "arduino"
+    ], 
+    "version": "8a94bc3acc", 
+    "export": {
+        "include": "libraries/MS5611"
+    }, 
+    "authors": [
+        {
+            "maintainer": true, 
+            "name": "Rob Tillaart", 
+            "url": null, 
+            "email": "Rob.Tillaart@gmail.com"
+        }, 
+        {
+            "url": null, 
+            "maintainer": false, 
+            "email": null, 
+            "name": "Erni"
+        }
+    ], 
+    "keywords": [
+        "ms5611", 
+        "temperature", 
+        "pressure"
+    ], 
+    "id": 1351, 
+    "description": "Experimental library for MS5611 Temperature & Pressure for Arduino."
+}

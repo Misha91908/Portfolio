@@ -1,0 +1,4 @@
+{
+  "hardware/parser_test.py": true,
+  "hardware/receiver_test.py": true
+}
