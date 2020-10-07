@@ -70,98 +70,91 @@ void setup()
 
 void loop()
 {
-    File f = SD.open("radiation.txt", FILE_WRITE);
-    if(f)
-    {
-        f.println("ergregeg");
-        f.close();
-    }
-    delay(1000);
-//    unsigned long start = 0, stop = 0, stop1 = 0, start1 = 0;
-//    float buf_signal;
-//    start = millis();
-//    start1 = millis();
-//    delay(10);
-//    while (dataReadyFlag != 1) {;}
-//    dataReadyFlag = 0;
-//    noInterrupts();
-//
-//    delayMicroseconds(5);
-//
-//    for (volatile int i = 0; i < 25; i++)
-//    {
-//        digitalWrite(SCLK, HIGH);
-//        delayMicroseconds(5);
-//        digitalWrite(SCLK, LOW);
-//        delayMicroseconds(5);
-//        data = digitalRead(DRDY);
-//        volt |= (data&0x01) << 24-i;
-//    }
-////     magic
-//    EIFR |= 1 << 2;
-//
-//    interrupts();
-////    log_data(mode, volt);
-//    volt = 0;
-//    stop = millis();
-//    sum = sum + (stop - start);
-//    start = 0;
-//    stop = 0;
-//    if(sum > 500)
-//    {
-//        mode++;
-//        sum = 0;
-//        mode = changeMode(mode);
-//    }
-//    stop1 = millis();
-//    sum1 = sum1 + (stop1 - start1);
-//    stop1 = 0;
-//    start1 = 0;
-//    if(sum1 > 1000)
-//    {
-//        buf_signal = float(signal);
-//        if(mkrentgen == 0.0)
-//        {
-//            if(iter < 46)
-//            {
-//                buf_rentgen[iter] = buf_signal;
-//                signal = 0;
-//                sum1 = 0;
-//                log_rad(buf_rentgen[iter]);
-////                Serial2.print("BufRad: ");Serial2.println(buf_rentgen[iter]);
-//            }
-//            iter++;
-//            if(iter == 46)
-//            {
-//                for (int i = 0; i < 46; ++i)
-//                {
-//                    mkrentgen = mkrentgen + buf_rentgen[i];
-//                }
-//                mkrentgen = mkrentgen/2.0;
-////                Serial2.print("Rad: ");Serial2.println(mkrentgen);
-//                log_rad(mkrentgen);
-//                iter = 0;
-//                signal = 0;
-//            }
-//        }
-//        else
-//        {
-//            buf_rentgen[iter] = buf_signal;
-//            mkrentgen = 0.0;
-//            for (int i = 0; i < 46; ++i)
-//            {
-//                mkrentgen = mkrentgen + buf_rentgen[i];
-//            }
-//            mkrentgen = mkrentgen/2.0;
-//            signal = 0;
-//            sum1 = 0;
-////            Serial2.print("Rad: ");Serial2.println(mkrentgen);
-//            log_rad(mkrentgen);
-//            iter++;
-//            if(iter == 46)
-//            {
-//                iter = 0;
-//            }
-//        }
-//    }
+   unsigned long start = 0, stop = 0, stop1 = 0, start1 = 0;
+   float buf_signal;
+   start = millis();
+   start1 = millis();
+   delay(10);
+   while (dataReadyFlag != 1) {;}
+   dataReadyFlag = 0;
+   noInterrupts();
+
+   delayMicroseconds(5);
+
+   for (volatile int i = 0; i < 25; i++)
+   {
+       digitalWrite(SCLK, HIGH);
+       delayMicroseconds(5);
+       digitalWrite(SCLK, LOW);
+       delayMicroseconds(5);
+       data = digitalRead(DRDY);
+       volt |= (data&0x01) << 24-i;
+   }
+//     magic
+   EIFR |= 1 << 2;
+
+   interrupts();
+//    log_data(mode, volt);
+   volt = 0;
+   stop = millis();
+   sum = sum + (stop - start);
+   start = 0;
+   stop = 0;
+   if(sum > 500)
+   {
+       mode++;
+       sum = 0;
+       mode = changeMode(mode);
+   }
+   stop1 = millis();
+   sum1 = sum1 + (stop1 - start1);
+   stop1 = 0;
+   start1 = 0;
+   if(sum1 > 1000)
+   {
+       buf_signal = float(signal);
+       if(mkrentgen == 0.0)
+       {
+           if(iter < 46)
+           {
+               buf_rentgen[iter] = buf_signal;
+               signal = 0;
+               sum1 = 0;
+               log_rad(buf_rentgen[iter]);
+//                Serial2.print("BufRad: ");Serial2.println(buf_rentgen[iter]);
+           }
+           iter++;
+           if(iter == 46)
+           {
+               for (int i = 0; i < 46; ++i)
+               {
+                   mkrentgen = mkrentgen + buf_rentgen[i];
+               }
+               mkrentgen = mkrentgen/2.0;
+//                Serial2.print("Rad: ");Serial2.println(mkrentgen);
+               log_rad(mkrentgen);
+               iter = 0;
+               signal = 0;
+           }
+       }
+       else
+       {
+           buf_rentgen[iter] = buf_signal;
+           mkrentgen = 0.0;
+           for (int i = 0; i < 46; ++i)
+           {
+               mkrentgen = mkrentgen + buf_rentgen[i];
+           }
+           mkrentgen = mkrentgen/2.0;
+           signal = 0;
+           sum1 = 0;
+//            Serial2.print("Rad: ");Serial2.println(mkrentgen);
+           log_rad(mkrentgen);
+           iter++;
+           if(iter == 46)
+           {
+               iter = 0;
+           }
+       }
+   }
 }
