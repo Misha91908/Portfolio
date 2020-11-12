@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+{% block content %}
+<h1>Staff Database Homepage</h1>
+
+  <p>Welcome to <em>Staff Database</em> !</p>
+
+<h2>Dynamic content</h2>
+
+  <p>The database has the following record counts:</p>
+  <ul>
+    <li><strong>Employees:</strong> {{ num_employees }}</li>
+  </ul>
+
+{% endblock %}

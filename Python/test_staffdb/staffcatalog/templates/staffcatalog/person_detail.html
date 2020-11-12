@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>{{ person.first_name }}  {{ person.last_name }}</h1>
+
+    <p><strong>Last Name:</strong> {{ person.last_name }}</p>
+    <p><strong>First Name:</strong> {{ person.first_name }}</p> <!-- author detail link not yet defined -->
+    <p><strong>Patronymic:</strong> {{ person.patronymic }}</p>
+    <p><strong>Birth Date:</strong> {{ person.birth_date }}</p>
+    <p><strong>email:</strong> {{ person.email }}</p>
+    <p><strong>Phone Number:</strong> {{ person.phone_number }}</p>
+    <p><strong>Job Assigned:</strong> {{ person.job_assign }}</p>
+    <p><strong>Job End:</strong> {{ person.job_end }}</p>
+    <p><strong>Position:</strong> {{ person.position }}</p>
+    <p><strong>Department:</strong> {{ person.department }}</p>
+
+{% endblock %}

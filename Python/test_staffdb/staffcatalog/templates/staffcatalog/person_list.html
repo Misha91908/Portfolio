@@ -1,0 +1,50 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <div class="list">
+        <h1>Full List Of Employees</h1>
+        {% if person_list %}
+        <ul>
+            {% for person in person_list %}
+          <li>
+            <a href="{{ person.get_absolute_url }}">{{ person.first_name }} {{ person.last_name }} {{ person.patronymic }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+        {% else %}
+          <p>There are no persons in the database.</p>
+        {% endif %}
+    </div>
+{% endblock %}
+{% block filter %}
+    <div class="filter">
+        <h2>Filters</h2>
+        <form action="{% url 'list' %}" method="post">
+          {% csrf_token %}
+            <div class="is_working">
+                <h3>Working status</h3>
+                <label class="checkbox">
+                    <input type="checkbox" name="state[]" value="1">
+                </label>
+                <p>All persons</p>
+                <label class="checkbox">
+                    <input type="checkbox" name="state[]" value="2">
+                </label>
+                <p> Actually working</p>
+                <label class="checkbox">
+                    <input type="checkbox" name="state[]" value="3">
+                </label>
+                <p>Not working</p>
+            </div>
+            <div class="department">
+                <h3>Department</h3>
+                <div class="scroll-area" style="overflow-y: scroll; height:200px;">
+                    {% for department in department_list %}
+                        <p><input type="checkbox" name="departments[]" value="{{ department }}">    {{ department }}</p>
+                    {% endfor %}
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+    </div>
+{% endblock %}

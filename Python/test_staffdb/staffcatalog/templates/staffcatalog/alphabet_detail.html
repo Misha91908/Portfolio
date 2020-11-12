@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+{% block content %}
+    <h1>Employees with {{ alphabet }} last name</h1>
+
+    <ul>
+        {% for person in persons %}
+      <li>
+        <a href="{{ person.get_absolute_url }}"> {{ person.last_name }}  {{ person.first_name }} {{ person.patronymic }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+{% endblock %}
